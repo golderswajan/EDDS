@@ -99,7 +99,7 @@ document.getElementById('submitImage').addEventListener('click', function () {
 function getRoboflowResponseAndCropping(base64Image, type){
 	axios({
             method: "POST",
-            url: "https://detect.roboflow.com/healthy-eye-detection/1",
+            url: "https://detect.roboflow.com/healthy-eye-detection/2",
             params: {
                 api_key: "hOD4rpSd24OEzzAeQBWJ"
             },
