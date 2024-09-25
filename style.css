@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
 }
 
+
 /* Wrapper for main layout with left and right content */
 .wrapper {
     display: flex;
@@ -22,17 +23,17 @@ body {
 
 /* Styling for the left and right content areas */
 .left-content, .right-content {
-    flex-basis: 20%;
+    flex-basis: 22%;
     padding: 20px;
     background-color: #f0f0f0;
     border-radius: 8px;
 }
 
-.left-content h2,.left-content h4, .right-content h2, .right-content h3 {
+.left-content h2,.left-content h4,.left-content .tip,.right-content h4, .right-content h2, .right-content h3 {
     color: #00796b;
 }
 
-.left-content p, .left-content ul, .right-content p {
+.left-content p, .right-content ul, .right-content p {
     color: #333;
     font-size: 14px;
     margin-bottom: 10px;
@@ -194,15 +195,15 @@ canvas{
 }
 /* Disease List design */
 /* Styling the disease list in the left-content */
-.left-content ul {
+.right-content ul {
     padding-left: 10px;
     margin-bottom: 2px;
     list-style-type: none; /* Remove default bullets */
 }
 
-.left-content ul li {
+.right-content ul li {
     margin-bottom: 4px; /* Space between list items */
-    padding: 0px;
+    padding: 4px;
     background-color: #f0f7f4; /* Light green background */
     border-left: 5px solid #00796b; /* Bold left border for emphasis */
     border-radius: 5px;
@@ -211,12 +212,12 @@ canvas{
     font-size: 12px;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
 }
-.left-content a {
+.right-content a {
     text-decoration: none; /* Remove underline */
-     color: black; /* Change color to match your design */
+    color: black; /* Change color to match your design */
 }
 
-.left-content ul li::before {
+.right-content ul li::before {
     content: ""; /* Bullet point */
     color: #00796b; /* Teal color for bullet point */
     font-size: 15px;
@@ -224,16 +225,17 @@ canvas{
     vertical-align: middle;
 }
 
-.left-content ul li:hover {
+.right-content ul li:hover {
     background-color: #e0f2f5; /* Slightly darker green on hover */
     transform: translateX(5px); /* Slight movement on hover for a dynamic effect */
+	text-decoration: none;
 }
 
-.left-content ul li:active {
+.right-content ul li:active {
     transform: scale(0.98); /* Slight shrink on click for feedback */
 }
 
-.left-content ul li span {
+.rigth-content ul li span {
     color: #004d40; /* Slightly darker color for the list text */
     font-weight: 600; /* Increase font weight for boldness */
 }
@@ -246,12 +248,12 @@ canvas{
 }
 
 /* Company name link style */
-.right-content a {
+.right-content b {
     text-decoration: none; /* Remove underline */
     color: #00796b; /* Change color to match your design */
 }
 
-.right-content a:hover {
+.right-content p a:hover {
     text-decoration: underline; /* Optional: add underline on hover for better usability */
     color: #004d40; /* Optional: change color on hover */
 }
