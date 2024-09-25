@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Disease Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+	<div class="wrapper">
+        <!-- Left Side: Header or Instructions -->
+        <div class="left-content">
+            <h2>Instructions</h2>
+            <p>1. Upload an image of face or use the camera to take a face picture (without glass) close to eyes.</p>
+            <p>2. Submit the image to detect eye disease of both eyes.</p>
+            <p>3. Results will be displayed for left and right eyes.</p>
+			
+			<h4>NB</h4>
+			<p>After submitting the request <b>wait sometime</b> untill the result viewing windows are loaded.</p>
+			
+			<h4>Detectable Diseases</h4>
+		
+			<ul class="inline-list">
+				<li><a href="https://en.wikipedia.org/wiki/Bitot%27s_spots#:~:text=Bitot's%20spots%20are%20the%20buildup,with%20drying%20of%20the%20cornea." target="_blank">Bitot Spot of Vitamin A Deficiency</a></li>
+				<li><a href="https://en.wikipedia.org/wiki/Cataract" target="_blank">Cataracts</a></li>
+				<li><a href="https://en.wikipedia.org/wiki/Conjunctivitis" target="_blank">Conjunctivitis</a></li>
+				<li><a href="https://en.wikipedia.org/wiki/Corneal_ulcer" target="_blank">Corneal Ulcer</a></li>
+				<li><a href="https://eyewiki.org/Ectropion" target="_blank">Ectropion</a></li>
+				<li><a href="https://eyewiki.org/Preseptal_Cellulitis" target="_blank">Periorbital Cellulits</a></li>
+			</ul>
+        </div>
+
+    <div class="container">
+        <h1>Eye Disease Detection System</h1>
+
+        <!-- Image Upload -->
+        <input type="file" id="imageUpload" accept="image/*">
+
+        <!-- Camera Capture -->
+        <button id="startCamera">Open Camera</button>
+        <button id="capture" disabled>Capture Image</button>
+		<div class="viewer">
+			<video id="video" width="240" height="160" autoplay></video>
+			<!-- Display the Captured/Uploaded Image -->
+			<img id="imagePreview" width="240" height="160" style="display:block;">
+		</div>
+		
+		
+        <canvas id="canvas" width="240" height="160" style="display:none;"></canvas>
+
+        <!-- Submit to Roboflow -->
+        <button id="submitImage">Submit to Analysis</button>
+
+    
+		<!-- Cropped Eye Previews -->
+		<div class="eye-container">
+		 <!-- Right Result -->
+			<div class="result">
+				<h3>Disease</h3>
+				<div class="result-box">
+					<p id="rightResult"></p>
+				</div>
+			</div>
+			<div class="eye-box">
+				<h3>Right Eye</h3>
+				<canvas id="rightEye"></canvas>
+			</div>
+			<div class="vertical-divider"></div>
+			<div class="eye-box">
+				<h3>Left Eye</h3>
+				<canvas id="leftEye"></canvas>
+			</div>
+			<!-- Left Result -->
+			<div class="result">
+				<h3>Disease</h3>
+				<div class="result-box">
+					<p id="leftResult"></p>
+				</div>
+			</div>
+		</div>
+    </div>
+	
+	<!-- Right Side: Additional Info -->
+        <div class="right-content">
+            <h2>About</h2>
+			<h3> Eye Disease Detection System(EDDS)</h3>
+            <p>This application uses AI to detect common eye diseases from images of the eyes.</p>
+            <p>Upload your image or capture it using your device’s camera to get started.</p>
+			<p>&copy; 2024 <a href="https://www.linkedin.com/in/swajancseku/" target="_blank">Swajan Golder</a>. All rights reserved.</p> <!-- Copyright Text -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="model.js"></script> <!-- Your lightweight DL model script -->
+</body>
+</html>
